@@ -49,17 +49,17 @@ namespace MessagePublisher
         {
             get
             {
-                throw new NotImplementedException();
+                return _newMessageText;
             }
             set
             {
-                throw new NotImplementedException();
+                _newMessageText = value;
             }
         }
 
         public System.Windows.Input.ICommand PublishCommand
         {
-            get { throw new NotImplementedException(); }
+            get { return _myCommand; }
         }
 
         public DateTime FromDate
@@ -100,7 +100,7 @@ namespace MessagePublisher
 
         public System.Windows.Input.ICommand FilterCommand
         {
-            get { throw new NotImplementedException(); }
+            get{ return _myCommand; }
         }
 
         public IEnumerable<Message> FilteredMessages
@@ -110,7 +110,7 @@ namespace MessagePublisher
 
         public System.Windows.Input.ICommand SaveCommand
         {
-            get { throw new NotImplementedException(); }
+            get { return _myCommand; }
         }
 
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -122,5 +122,9 @@ namespace MessagePublisher
         private DateTime _toDate = DateTime.Today;
 
         private DateTime _fromDate = DateTime.Today.AddYears(-1);
+
+        private MyCommand _myCommand;
+
+        private string _newMessageText;
     }
 }

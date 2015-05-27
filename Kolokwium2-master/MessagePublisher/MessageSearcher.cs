@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MessagePublisher
 {
-    public class MessageSearcher
+    abstract public class MessageSearcher
     {
         public virtual Func<Message, bool> Searcher
         {
